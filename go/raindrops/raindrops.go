@@ -6,22 +6,18 @@ import (
 
 //Convert to raindrops
 func Convert(n int) string {
-	switch 0 {
-	case n % 105:
-		return "PlingPlangPlong"
-	case n % 35:
-		return "PlangPlong"
-	case n % 21:
-		return "PlingPlong"
-	case n % 15:
-		return "PlingPlang"
-	case n % 3:
-		return "Pling"
-	case n % 5:
-		return "Plang"
-	case n % 7:
-		return "Plong"
-	default:
-		return strconv.Itoa(n)
+	result := ""
+	if n%3 == 0 {
+		result += "Pling"
 	}
+	if n%5 == 0 {
+		result += "Plang"
+	}
+	if n%7 == 0 {
+		result += "Plong"
+	}
+	if result == "" {
+		result = strconv.Itoa(n)
+	}
+	return result
 }
