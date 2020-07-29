@@ -6,14 +6,16 @@ import (
 
 //IsIsogram - Check if a word is a isogram
 func IsIsogram(word string) bool {
-	letters := make(map[rune]int)
+	letters := make(map[rune]bool)
 	for _, char := range word {
 		l := unicode.ToLower(char)
-		count := letters[l]
-		if count == 1 && unicode.IsLetter(l) {
-			return false
+		if unicode.IsLetter(l) {
+			seen := letters[l]
+			if seen {
+				return false
+			}
+			letters[l] = true
 		}
-		letters[l] = count + 1
 	}
 	return true
 }
