@@ -1,7 +1,6 @@
 package summultiples
 
 import (
-	"fmt"
 	"testing"
 )
 
@@ -23,10 +22,10 @@ func BenchmarkSumMultiples(b *testing.B) {
 	}
 }
 
-func TestCreateCombinations(t *testing.T) {
-	values := []int{2, 3, 9, 11, 17, 21}
-	combinations := createCombinations(1, values...)
-	for i, comb := range combinations {
-		fmt.Printf("%d: %v\n", i+1, comb)
-	}
-}
+// func TestCreateCombinations(t *testing.T) {
+// 	values := []int{2, 3, 9, 11, 17, 21}
+// 	combinations := createCombinations(1, values...)
+// 	for i, comb := range combinations {
+// 		fmt.Printf("%d: %v\n", i+1, comb)
+// 	}
+// }
