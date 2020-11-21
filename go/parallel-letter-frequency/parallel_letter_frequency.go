@@ -30,6 +30,8 @@ func ConcurrentFrequency(arr []string) FreqMap {
 	for _, s := range arr {
 		SafeFrequency(s, &safeFreqMap)
 	}
+	safeFreqMap.mux.Lock()
+	defer safeFreqMap.mux.Unlock()
 	return safeFreqMap.freqMap
 }
 
